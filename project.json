@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "08",
+  "repository_name": "pixel-to-program",
+  "title": "Pixel-to-Program",
+  "package": "pixel_to_program",
+  "focus": "Synthetic vision data, scene programs, encoder-decoder training",
+  "layout": {
+    "docs_root": "reference",
+    "tests_root": "tests",
+    "tools_root": "tools",
+    "config_root": "settings",
+    "examples_root": "gallery",
+    "verifier": "tools/check_vision.py",
+    "source_roots": [
+      "src"
+    ],
+    "documents": {
+      "architecture": "reference/image-language.md",
+      "design": "reference/attention-and-search.md",
+      "review": "reference/rendering-defects.md",
+      "experiments": "reference/training-runs.md",
+      "publishing": "reference/sharing-a-checkpoint.md",
+      "validation": "reference/check-history.md"
+    }
+  }
+}
