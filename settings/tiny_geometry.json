@@ -1,0 +1,12 @@
+{
+  "description": "Documented CLI defaults; explicit CLI flags select a run.",
+  "seed": 17,
+  "canvas": [32, 32],
+  "train_examples": 256,
+  "dev_examples": 64,
+  "test_examples": 64,
+  "epochs": 10,
+  "batch_size": 32,
+  "hidden": 128,
+  "device": "cpu"
+}
