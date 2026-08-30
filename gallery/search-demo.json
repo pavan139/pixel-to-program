@@ -1,0 +1,205 @@
+{
+  "experiment": "likelihood_beam_search",
+  "backend": "synthetic_probability_fixture",
+  "learned_model_evaluated": false,
+  "vocabulary": [
+    "A",
+    "B",
+    "EOS"
+  ],
+  "exhaustive_best_completed_probability": 0.396,
+  "searches": [
+    {
+      "beam_size": 1,
+      "status": "completed",
+      "tokens": [
+        0,
+        1,
+        2
+      ],
+      "eos_emitted": true,
+      "log_probability": -1.203972804325936,
+      "normalized_score": -1.203972804325936,
+      "length_penalty": 0.0,
+      "backend_calls": 3,
+      "candidate_expansions": 5,
+      "beams": [
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        }
+      ],
+      "completed_hypotheses": [
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        }
+      ]
+    },
+    {
+      "beam_size": 2,
+      "status": "completed",
+      "tokens": [
+        1,
+        2
+      ],
+      "eos_emitted": true,
+      "log_probability": -0.9263410677276565,
+      "normalized_score": -0.9263410677276565,
+      "length_penalty": 0.0,
+      "backend_calls": 3,
+      "candidate_expansions": 7,
+      "beams": [
+        {
+          "tokens": [
+            1,
+            2
+          ],
+          "log_probability": -0.9263410677276565,
+          "finished": true,
+          "normalized_score": -0.9263410677276565
+        },
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        }
+      ],
+      "completed_hypotheses": [
+        {
+          "tokens": [
+            1,
+            2
+          ],
+          "log_probability": -0.9263410677276565,
+          "finished": true,
+          "normalized_score": -0.9263410677276565
+        },
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        }
+      ]
+    },
+    {
+      "beam_size": 4,
+      "status": "completed",
+      "tokens": [
+        1,
+        2
+      ],
+      "eos_emitted": true,
+      "log_probability": -0.9263410677276565,
+      "normalized_score": -0.9263410677276565,
+      "length_penalty": 0.0,
+      "backend_calls": 3,
+      "candidate_expansions": 8,
+      "beams": [
+        {
+          "tokens": [
+            1,
+            2
+          ],
+          "log_probability": -0.9263410677276565,
+          "finished": true,
+          "normalized_score": -0.9263410677276565
+        },
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        },
+        {
+          "tokens": [
+            0,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        },
+        {
+          "tokens": [
+            1,
+            0,
+            2
+          ],
+          "log_probability": -5.521460917862246,
+          "finished": true,
+          "normalized_score": -5.521460917862246
+        }
+      ],
+      "completed_hypotheses": [
+        {
+          "tokens": [
+            1,
+            2
+          ],
+          "log_probability": -0.9263410677276565,
+          "finished": true,
+          "normalized_score": -0.9263410677276565
+        },
+        {
+          "tokens": [
+            0,
+            1,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        },
+        {
+          "tokens": [
+            0,
+            2
+          ],
+          "log_probability": -1.203972804325936,
+          "finished": true,
+          "normalized_score": -1.203972804325936
+        },
+        {
+          "tokens": [
+            1,
+            0,
+            2
+          ],
+          "log_probability": -5.521460917862246,
+          "finished": true,
+          "normalized_score": -5.521460917862246
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This verifies search mechanics, not image-to-program quality."
+  ]
+}
