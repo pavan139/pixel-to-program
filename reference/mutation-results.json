@@ -1,0 +1,29 @@
+{
+  "method": "temporary copied source mutations; original source unchanged",
+  "mutations": [
+    {
+      "mutation": "disable-heldout-visibility-check",
+      "target": "src/pixel_to_program/data.py",
+      "test_file": "test_adversarial_data.py",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "======================================================================\nFAIL: test_occluded_heldout_scene_rejected_even_with_matching_image (test_adversarial_data.ManifestContractTests.test_occluded_heldout_scene_rejected_even_with_matching_image)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpj7w5d452/project/tests/test_adversarial_data.py\", line 101, in test_occluded_heldout_scene_rejected_even_with_matching_image\n    with self.assertRaisesRegex(ValueError, \"visible\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 8 tests in 1.392s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "mutation": "disable-neural-grammar-mask",
+      "target": "src/pixel_to_program/model.py",
+      "test_file": "test_optional_training.py",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "======================================================================\nFAIL: test_actual_neural_masking_raw_failures_and_short_budget (test_optional_training.OptionalTrainingTests.test_actual_neural_masking_raw_failures_and_short_budget)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmppzbjzi1_/project/tests/test_optional_training.py\", line 79, in test_actual_neural_masking_raw_failures_and_short_budget\n    self.assertTrue(masked[\"valid_program\"])\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 3 tests in 9.386s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "mutation": "wrong-teacher-forcing-label-shift",
+      "target": "src/pixel_to_program/model.py",
+      "test_file": "test_optional_training.py",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "======================================================================\nFAIL: test_train_save_load_predict_and_evaluate (test_optional_training.OptionalTrainingTests.test_train_save_load_predict_and_evaluate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpgea8xhfi/project/tests/test_optional_training.py\", line 45, in test_train_save_load_predict_and_evaluate\n    self.assertAlmostEqual(report[\"history\"][0][\"dev_token_mean_loss\"], actual_dev, places=5)\nAssertionError: 3.859649234347873 != 3.8136075337727866 within 5 places (0.04604170057508661 difference)\n\n----------------------------------------------------------------------\nRan 3 tests in 5.988s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}
