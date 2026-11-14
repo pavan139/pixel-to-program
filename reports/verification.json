@@ -1,0 +1,1960 @@
+{
+  "schema_version": 2,
+  "generated_at_utc": "2026-11-15T04:19:53.714636+00:00",
+  "repository": "pixel-to-program",
+  "source_sha256": "3b38487720170e00dd05fe309a91b75638058b538b623ec3d38955ab59d20979",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scope": "software_contracts_and_labeled_synthetic_experiments",
+  "tests_discovered": 54,
+  "tests_skipped": 0,
+  "tests_executed": 54,
+  "external_provider_calls": false,
+  "full_model_accuracy_benchmark_run": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "metadata_and_documentation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "lint",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "tools"
+      ],
+      "seconds": 0.065019
+    },
+    {
+      "name": "format",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "20 files already formatted\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "tools"
+      ],
+      "seconds": 0.051406
+    },
+    {
+      "name": "compile",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "tools"
+      ],
+      "seconds": 0.066327
+    },
+    {
+      "name": "unit_tests",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "test_absolute_parent_null_and_missing_paths_rejected (test_adversarial_data.ManifestContractTests.test_absolute_parent_null_and_missing_paths_rejected) ... ok\ntest_duplicate_generation_is_bounded (test_adversarial_data.ManifestContractTests.test_duplicate_generation_is_bounded) ... ok\ntest_duplicate_json_keys_rejected (test_adversarial_data.ManifestContractTests.test_duplicate_json_keys_rejected) ... ok\ntest_generation_guarantees_visible_holdout_for_many_seeds (test_adversarial_data.ManifestContractTests.test_generation_guarantees_visible_holdout_for_many_seeds) ... ok\ntest_image_and_manifest_symlink_escape (test_adversarial_data.ManifestContractTests.test_image_and_manifest_symlink_escape) ... ok\ntest_nonobject_missing_extra_and_wrong_types_fail_as_values (test_adversarial_data.ManifestContractTests.test_nonobject_missing_extra_and_wrong_types_fail_as_values) ... ok\ntest_occluded_heldout_scene_rejected_even_with_matching_image (test_adversarial_data.ManifestContractTests.test_occluded_heldout_scene_rejected_even_with_matching_image) ... ok\ntest_write_output_symlink_escape (test_adversarial_data.ManifestContractTests.test_write_output_symlink_escape) ... ok\ntest_batched_beam_search_encodes_the_image_only_once (test_attention_training.AttentionTests.test_batched_beam_search_encodes_the_image_only_once) ... ok\ntest_best_and_latest_weights_are_one_atomic_checkpoint_with_explicit_selection (test_attention_training.AttentionTests.test_best_and_latest_weights_are_one_atomic_checkpoint_with_explicit_selection) ... ok\ntest_causal_decoder_does_not_read_future_tokens (test_attention_training.AttentionTests.test_causal_decoder_does_not_read_future_tokens) ... ok\ntest_checkpoint_binding_rejects_dataset_changes_and_malformed_models (test_attention_training.AttentionTests.test_checkpoint_binding_rejects_dataset_changes_and_malformed_models) ... ok\ntest_padding_loss_is_token_weighted_and_padding_invariant (test_attention_training.AttentionTests.test_padding_loss_is_token_weighted_and_padding_invariant) ... ok\ntest_shared_engine_runs_gru_baseline_and_paired_ablation (test_attention_training.AttentionTests.test_shared_engine_runs_gru_baseline_and_paired_ablation) ... ok\ntest_training_resume_is_identical_with_dropout_optimizer_and_rng (test_attention_training.AttentionTests.test_training_resume_is_identical_with_dropout_optimizer_and_rng) ... ok\ntest_visual_memory_conditions_output_and_receives_gradients (test_attention_training.AttentionTests.test_visual_memory_conditions_output_and_receives_gradients) ... ok\ntest_bad_prefixes_and_internal_special_tokens (test_decoding.GrammarAndExtractionTests.test_bad_prefixes_and_internal_special_tokens) ... ok\ntest_eos_is_required_and_right_padding_is_ignored (test_decoding.GrammarAndExtractionTests.test_eos_is_required_and_right_padding_is_ignored) ... ok\ntest_geometry_aware_width_and_height (test_decoding.GrammarAndExtractionTests.test_geometry_aware_width_and_height) ... ok\ntest_multiset_counts_duplicates_and_ignores_order (test_decoding.GrammarAndExtractionTests.test_multiset_counts_duplicates_and_ignores_order) ... ok\ntest_primitive_metrics_do_not_reward_wrong_color_or_geometry (test_decoding.GrammarAndExtractionTests.test_primitive_metrics_do_not_reward_wrong_color_or_geometry) ... ok\ntest_shape_budget_and_completion (test_decoding.GrammarAndExtractionTests.test_shape_budget_and_completion) ... ok\ntest_actual_neural_masking_raw_failures_and_short_budget (test_optional_training.OptionalTrainingTests.test_actual_neural_masking_raw_failures_and_short_budget) ... ok\ntest_checkpoint_architecture_and_budget_types_fail_explicitly (test_optional_training.OptionalTrainingTests.test_checkpoint_architecture_and_budget_types_fail_explicitly) ... ok\ntest_train_save_load_predict_and_evaluate (test_optional_training.OptionalTrainingTests.test_train_save_load_predict_and_evaluate) ... ok\ntest_boolean_coordinate_not_integer (test_scene.SceneTests.test_boolean_coordinate_not_integer) ... ok\ntest_canonical_coordinates_required (test_scene.SceneTests.test_canonical_coordinates_required) ... ok\ntest_composition_splits (test_scene.SceneTests.test_composition_splits) ... ok\ntest_dataset_manifest_and_hashes (test_scene.SceneTests.test_dataset_manifest_and_hashes) ... ok\ntest_ellipse_has_unfilled_corners (test_scene.SceneTests.test_ellipse_has_unfilled_corners) ... ok\ntest_empty_scene_allowed (test_scene.SceneTests.test_empty_scene_allowed) ... ok\ntest_heldout_composition_is_visually_observable (test_scene.SceneTests.test_heldout_composition_is_visually_observable) ... ok\ntest_incomplete_program_rejected (test_scene.SceneTests.test_incomplete_program_rejected) ... ok\ntest_later_shapes_occlude_earlier (test_scene.SceneTests.test_later_shapes_occlude_earlier) ... ok\ntest_manifest_image_program_consistency (test_scene.SceneTests.test_manifest_image_program_consistency) ... ok\ntest_manifest_path_traversal_rejected (test_scene.SceneTests.test_manifest_path_traversal_rejected) ... ok\ntest_metrics_dont_reward_blank_foreground (test_scene.SceneTests.test_metrics_dont_reward_blank_foreground) ... ok\ntest_out_of_bounds_rejected (test_scene.SceneTests.test_out_of_bounds_rejected) ... ok\ntest_ppm_roundtrip_and_malformed (test_scene.SceneTests.test_ppm_roundtrip_and_malformed) ... ok\ntest_program_roundtrip (test_scene.SceneTests.test_program_roundtrip) ... ok\ntest_reference_report_does_not_claim_model_accuracy (test_scene.SceneTests.test_reference_report_does_not_claim_model_accuracy) ... ok\ntest_scene_budget (test_scene.SceneTests.test_scene_budget) ... ok\ntest_svg_only_allowlisted_primitives (test_scene.SceneTests.test_svg_only_allowlisted_primitives) ... ok\ntest_tokenizer_roundtrip_without_torch (test_scene.SceneTests.test_tokenizer_roundtrip_without_torch) ... ok\ntest_unsupported_commands_rejected (test_scene.SceneTests.test_unsupported_commands_rejected) ... ok\ntest_backend_and_mask_contract_errors (test_search.BeamSearchTests.test_backend_and_mask_contract_errors) ... ok\ntest_beam_recovers_jointly_better_completion_than_greedy (test_search.BeamSearchTests.test_beam_recovers_jointly_better_completion_than_greedy) ... ok\ntest_completed_hypotheses_are_never_expanded (test_search.BeamSearchTests.test_completed_hypotheses_are_never_expanded) ... ok\ntest_constraints_preserve_original_model_scores_without_renormalizing (test_search.BeamSearchTests.test_constraints_preserve_original_model_scores_without_renormalizing) ... ok\ntest_incomplete_and_dead_end_outputs_remain_explicit (test_search.BeamSearchTests.test_incomplete_and_dead_end_outputs_remain_explicit) ... ok\ntest_length_penalty_is_explicit_and_ties_are_deterministic (test_search.BeamSearchTests.test_length_penalty_is_explicit_and_ties_are_deterministic) ... ok\ntest_retained_completion_survives_eviction_by_unfinished_prefixes (test_search.BeamSearchTests.test_retained_completion_survives_eviction_by_unfinished_prefixes) ... ok\ntest_sufficient_width_matches_exhaustive_constrained_joint_search (test_search.BeamSearchTests.test_sufficient_width_matches_exhaustive_constrained_joint_search) ... ok\ntest_invalid_attention_and_training_dimensions (test_search.ConfigurationTests.test_invalid_attention_and_training_dimensions) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 4.317s\n\nOK\n",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "seconds": 5.250414
+    },
+    {
+      "name": "demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"backend\": \"synthetic_ground_truth\",\n  \"learned_model_evaluated\": false,\n  \"directory\": \"artifacts/demo\",\n  \"program\": \"SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE BLUE 16 10 10 8 END\",\n  \"roundtrip\": {\n    \"exact_raster_match\": true,\n    \"pixel_agreement\": 1.0,\n    \"foreground_iou\": 1.0,\n    \"rgb_mae\": 0.0\n  }\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pixel_to_program",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-zrvwfv3_/demo.json"
+      ],
+      "seconds": 0.14899,
+      "report": {
+        "backend": "synthetic_ground_truth",
+        "learned_model_evaluated": false,
+        "directory": "artifacts/demo",
+        "program": "SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE BLUE 16 10 10 8 END",
+        "roundtrip": {
+          "exact_raster_match": true,
+          "pixel_agreement": 1.0,
+          "foreground_iou": 1.0,
+          "rgb_mae": 0.0
+        }
+      }
+    },
+    {
+      "name": "evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"schema_version\": 1,\n  \"experiment\": \"synthetic_codec_and_renderer_validation\",\n  \"backend\": \"ground_truth_program_roundtrip\",\n  \"learned_model_evaluated\": false,\n  \"seed\": 17,\n  \"denominator\": 36,\n  \"cases_per_split\": 12,\n  \"oracle_exact_raster_matches\": 36,\n  \"cases\": [\n    {\n      \"id\": \"25440d45aa90038ada13a13af320eb29bc924d0b9ace1291eb18658a5dd2c024\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE GREEN 10 20 8 12 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.849609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.09452869689542483\n      }\n    },\n    {\n      \"id\": \"dac7c04c21fc7929e82de7bc55f7681f649cb445a67c20b9e09c25061032d29b\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 10 7 14 11 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.849609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08748212826797386\n      }\n    },\n    {\n      \"id\": \"f18dfc5bcbe6c77151745026c3b5415c6a719946cf0746613e676b33fc2763cc\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 16 6 12 5 ELLIPSE GREEN 9 18 9 12 RECT BLUE 3 8 13 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.7578125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.13985906862745098\n      }\n    },\n    {\n      \"id\": \"b4e23d3bf63e1c582ae0e1040b4635e4dab79335300f6b925be5cf19c3d8be76\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 20 3 8 14 ELLIPSE RED 0 13 13 6 ELLIPSE GREEN 4 10 5 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8173828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.10158164828431372\n      }\n    },\n    {\n      \"id\": \"386242bf3b056db8785cf250e9e66a52e8d438533b27169473ed593e8f00be25\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 9 15 10 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06934232026143791\n      }\n    },\n    {\n      \"id\": \"a8a5c713d5fbf5189ba4de12aca693d2f7e09fce57ecdf88144b99883cc1aa77\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 14 5 4 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.94921875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.02688419117647059\n      }\n    },\n    {\n      \"id\": \"2a1eee28b1f56433b8b7d989a840c3bd75d04c6affbe2bd9c3e4badb3e8e041a\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 9 13 4 13 ELLIPSE GREEN 4 23 12 9 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.87890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07472937091503268\n      }\n    },\n    {\n      \"id\": \"45f65458799198c59d46d7a208039d8403469b749ef7859156425b506dec1e34\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 6 5 13 6 RECT BLUE 21 2 6 14 RECT BLUE 14 14 8 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.09732434640522876\n      }\n    },\n    {\n      \"id\": \"9a06ca2c2e4a46eccb3bf463c731435e67853456c676dc7921ec172b61c71fba\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 20 15 7 8 RECT RED 9 18 8 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9140625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.04998978758169935\n      }\n    },\n    {\n      \"id\": \"a43f717c063801af07686cec93dd134c34a7aba7d4837f409fa6fa9b78936493\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 13 19 14 7 RECT RED 1 21 6 11 RECT BLUE 7 13 14 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.734375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.14399509803921567\n      }\n    },\n    {\n      \"id\": \"e8e28599cd825e5e38310fbe291b6a7cb79a2315375e5155046a4f4fb9283374\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 6 2 8 8 RECT RED 10 8 8 12 ELLIPSE RED 7 7 10 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8525390625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08771829044117647\n      }\n    },\n    {\n      \"id\": \"30e8f1fd280ffc1a3d196b1f984c2841256c4495f6657e676dab41c2094585b1\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 5 7 12 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.84765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08065257352941177\n      }\n    },\n    {\n      \"id\": \"58f9b99a6c0a1842e6e61c4092f7e6b182b72b001ec7d78a2edd066f075cf5b1\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 7 10 13 10 ELLIPSE RED 17 12 4 13 RECT GREEN 21 5 7 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8310546875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.10041998570261439\n      }\n    },\n    {\n      \"id\": \"18e3eb8595771be6182fa5f4a24ab3b712c21a5293a288c1c45a6536293ece86\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 7 9 11 7 RECT GREEN 16 18 10 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8134765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11513863357843138\n      }\n    },\n    {\n      \"id\": \"fd8635eabd785af51cb468d50a2048b818a074b052c936e3e929e7478917bddf\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT GREEN 6 17 9 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.912109375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.05572150735294118\n      }\n    },\n    {\n      \"id\": \"e9534bf90288d5808f4b74d47486fc4fd2f0d8f31a2b36df495c4b865d6e3fd0\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 18 3 8 9 RECT GREEN 5 21 4 11 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8984375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06132557189542484\n      }\n    },\n    {\n      \"id\": \"705d0998964417a54816966a2e1126f1f4607f7d7b7a3ed128930b87012ef1e3\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 21 11 11 10 RECT RED 0 0 4 12 RECT GREEN 1 1 4 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.86328125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0807546977124183\n      }\n    },\n    {\n      \"id\": \"9f8b85ae2708b84642bab2b29be5aa2b4bbcb0c9598eed15cd785f82c8dd23df\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE GREEN 19 18 13 14 ELLIPSE RED 13 15 6 10 RECT GREEN 14 10 7 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.759765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.15169270833333334\n      }\n    },\n    {\n      \"id\": \"30d7b56c13ed310a9c7e65bd9c2e51754fc91afa87bf210ba40fc005bde64e11\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT BLUE 7 0 6 13 RECT GREEN 14 12 12 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.771484375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.13691023284313725\n      }\n    },\n    {\n      \"id\": \"28e33d8ab08c663b408150c2e3faf7b175d03638c1ff8f306e44f8e893261636\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT BLUE 5 7 8 11 RECT BLUE 10 1 8 4 RECT GREEN 2 6 13 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8505859375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08573963439542483\n      }\n    },\n    {\n      \"id\": \"1c96ec31095dc642417d38aa17560e4efba67e09e2bed41e8868c67d1df67845\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 18 19 6 9 RECT RED 12 12 9 13 RECT GREEN 19 4 6 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8046875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11667687908496732\n      }\n    },\n    {\n      \"id\": \"76bb9dc511e6ff51c403c65833dd595f6d47564ce3617e2a0ab5480517d9d73a\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 3 2 11 8 RECT RED 4 20 12 4 RECT GREEN 3 7 9 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.81640625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11139195261437909\n      }\n    },\n    {\n      \"id\": \"376f0517ff7d93735ebae4c164d2806aea81ed5cb8ec19332c0157f2f2804922\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT RED 15 6 9 6 RECT GREEN 0 23 10 9 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.859375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08639705882352941\n      }\n    },\n    {\n      \"id\": \"496a75865b218aeb7c2d49e8463dc9306bf6078e6696cfaaa8480f1b45f12444\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT GREEN 8 18 10 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.02476511437908497\n      }\n    },\n    {\n      \"id\": \"aeb72afad2f8943c3f55f546361faa1c9a4402b26748201c50df0d47c6e031c6\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 3 10 13 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8662109375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07082950367647059\n      }\n    },\n    {\n      \"id\": \"e61249d5a9d030812634d1047ca2a6ccdf42b90c49acfd8976a09d7df4c7659a\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 15 18 14 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.91796875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.04342830882352941\n      }\n    },\n    {\n      \"id\": \"e3aa074decf6a534ce4d7545da174f358e990af236082ad938466aa98a32e68a\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT RED 4 22 8 8 ELLIPSE BLUE 18 28 11 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.90234375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.05496834150326797\n      }\n    },\n    {\n      \"id\": \"3705bafb8f296c4d1e885ee4a8531e5b93f9f71e89d0f7b00830a2ae9e0444dd\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 2 4 5 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.947265625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.027918198529411766\n      }\n    },\n    {\n      \"id\": \"194ec3f2c531766e9ccc4c3188ffd45cb97a261138c4fc4d59bb82b563284759\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE RED 24 15 4 11 ELLIPSE BLUE 2 5 9 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.034926470588235295\n      }\n    },\n    {\n      \"id\": \"b4c8cbbb2a7212fe941c7a9f9d22b48362cd6cd759c1365768f04a862d952a73\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 19 2 7 7 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9638671875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.019129136029411766\n      }\n    },\n    {\n      \"id\": \"0c7ac5e0b0ab8497a1dc053b46987a83efc40de982fb7d1cf36b50d45b2930a6\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 20 4 5 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9794921875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.010857077205882353\n      }\n    },\n    {\n      \"id\": \"fa5abb938259b865b7292c7b26a8fef0153267e8a4af89fdd950868209806583\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 13 16 13 12 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.87890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06410845588235294\n      }\n    },\n    {\n      \"id\": \"4777decd28d8aa8367b0511eb7de9a262a5ca921a1674d1faa15edb875b79d98\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE GREEN 0 12 4 11 RECT RED 10 6 4 13 ELLIPSE BLUE 8 8 10 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8466796875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08530560661764706\n      }\n    },\n    {\n      \"id\": \"8ce2280538308722b5d92d778a54cb978cc59bebf1d5dac9cbdc854c1ef6935e\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 13 26 4 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.98828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0062040441176470585\n      }\n    },\n    {\n      \"id\": \"43e3904aa22a73bfa3fa27b4828d95a7d07a9c7fdb9904baa9b6e687fd2a4049\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT BLUE 25 11 5 4 ELLIPSE RED 7 17 9 10 ELLIPSE BLUE 3 12 12 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.865234375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07492085375816993\n      }\n    },\n    {\n      \"id\": \"39a3545c064d2dde998814b73de72f6b7b7bb4bf30ee9c2f047397a6793ddc6c\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT RED 15 6 4 4 RECT RED 1 15 10 14 ELLIPSE BLUE 3 14 9 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8388671875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0906671262254902\n      }\n    }\n  ],\n  \"limitations\": [\n    \"Ground-truth programs are supplied to the codec. This is not image-to-program prediction accuracy.\",\n    \"Blank backgrounds inflate raw pixel agreement; foreground IoU is reported separately.\",\n    \"Training and learned-model evaluation require the optional torch dependency and an actual checkpoint.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pixel_to_program",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-zrvwfv3_/evaluate.json"
+      ],
+      "seconds": 0.265762,
+      "report": {
+        "schema_version": 1,
+        "experiment": "synthetic_codec_and_renderer_validation",
+        "backend": "ground_truth_program_roundtrip",
+        "learned_model_evaluated": false,
+        "seed": 17,
+        "denominator": 36,
+        "cases_per_split": 12,
+        "oracle_exact_raster_matches": 36,
+        "cases": [
+          {
+            "id": "25440d45aa90038ada13a13af320eb29bc924d0b9ace1291eb18658a5dd2c024",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE GREEN 10 20 8 12 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.849609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.09452869689542483
+            }
+          },
+          {
+            "id": "dac7c04c21fc7929e82de7bc55f7681f649cb445a67c20b9e09c25061032d29b",
+            "split": "train",
+            "program": "SCENE RECT RED 10 7 14 11 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.849609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08748212826797386
+            }
+          },
+          {
+            "id": "f18dfc5bcbe6c77151745026c3b5415c6a719946cf0746613e676b33fc2763cc",
+            "split": "train",
+            "program": "SCENE RECT RED 16 6 12 5 ELLIPSE GREEN 9 18 9 12 RECT BLUE 3 8 13 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.7578125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.13985906862745098
+            }
+          },
+          {
+            "id": "b4e23d3bf63e1c582ae0e1040b4635e4dab79335300f6b925be5cf19c3d8be76",
+            "split": "train",
+            "program": "SCENE RECT BLUE 20 3 8 14 ELLIPSE RED 0 13 13 6 ELLIPSE GREEN 4 10 5 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8173828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.10158164828431372
+            }
+          },
+          {
+            "id": "386242bf3b056db8785cf250e9e66a52e8d438533b27169473ed593e8f00be25",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 9 15 10 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06934232026143791
+            }
+          },
+          {
+            "id": "a8a5c713d5fbf5189ba4de12aca693d2f7e09fce57ecdf88144b99883cc1aa77",
+            "split": "train",
+            "program": "SCENE RECT BLUE 14 5 4 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.94921875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.02688419117647059
+            }
+          },
+          {
+            "id": "2a1eee28b1f56433b8b7d989a840c3bd75d04c6affbe2bd9c3e4badb3e8e041a",
+            "split": "train",
+            "program": "SCENE RECT RED 9 13 4 13 ELLIPSE GREEN 4 23 12 9 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.87890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07472937091503268
+            }
+          },
+          {
+            "id": "45f65458799198c59d46d7a208039d8403469b749ef7859156425b506dec1e34",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 6 5 13 6 RECT BLUE 21 2 6 14 RECT BLUE 14 14 8 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.09732434640522876
+            }
+          },
+          {
+            "id": "9a06ca2c2e4a46eccb3bf463c731435e67853456c676dc7921ec172b61c71fba",
+            "split": "train",
+            "program": "SCENE RECT RED 20 15 7 8 RECT RED 9 18 8 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9140625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.04998978758169935
+            }
+          },
+          {
+            "id": "a43f717c063801af07686cec93dd134c34a7aba7d4837f409fa6fa9b78936493",
+            "split": "train",
+            "program": "SCENE RECT BLUE 13 19 14 7 RECT RED 1 21 6 11 RECT BLUE 7 13 14 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.734375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.14399509803921567
+            }
+          },
+          {
+            "id": "e8e28599cd825e5e38310fbe291b6a7cb79a2315375e5155046a4f4fb9283374",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 6 2 8 8 RECT RED 10 8 8 12 ELLIPSE RED 7 7 10 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8525390625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08771829044117647
+            }
+          },
+          {
+            "id": "30e8f1fd280ffc1a3d196b1f984c2841256c4495f6657e676dab41c2094585b1",
+            "split": "train",
+            "program": "SCENE RECT BLUE 5 7 12 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.84765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08065257352941177
+            }
+          },
+          {
+            "id": "58f9b99a6c0a1842e6e61c4092f7e6b182b72b001ec7d78a2edd066f075cf5b1",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 7 10 13 10 ELLIPSE RED 17 12 4 13 RECT GREEN 21 5 7 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8310546875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.10041998570261439
+            }
+          },
+          {
+            "id": "18e3eb8595771be6182fa5f4a24ab3b712c21a5293a288c1c45a6536293ece86",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 7 9 11 7 RECT GREEN 16 18 10 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8134765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11513863357843138
+            }
+          },
+          {
+            "id": "fd8635eabd785af51cb468d50a2048b818a074b052c936e3e929e7478917bddf",
+            "split": "dev",
+            "program": "SCENE RECT GREEN 6 17 9 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.912109375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.05572150735294118
+            }
+          },
+          {
+            "id": "e9534bf90288d5808f4b74d47486fc4fd2f0d8f31a2b36df495c4b865d6e3fd0",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 18 3 8 9 RECT GREEN 5 21 4 11 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8984375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06132557189542484
+            }
+          },
+          {
+            "id": "705d0998964417a54816966a2e1126f1f4607f7d7b7a3ed128930b87012ef1e3",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 21 11 11 10 RECT RED 0 0 4 12 RECT GREEN 1 1 4 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.86328125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0807546977124183
+            }
+          },
+          {
+            "id": "9f8b85ae2708b84642bab2b29be5aa2b4bbcb0c9598eed15cd785f82c8dd23df",
+            "split": "dev",
+            "program": "SCENE ELLIPSE GREEN 19 18 13 14 ELLIPSE RED 13 15 6 10 RECT GREEN 14 10 7 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.759765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.15169270833333334
+            }
+          },
+          {
+            "id": "30d7b56c13ed310a9c7e65bd9c2e51754fc91afa87bf210ba40fc005bde64e11",
+            "split": "dev",
+            "program": "SCENE RECT BLUE 7 0 6 13 RECT GREEN 14 12 12 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.771484375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.13691023284313725
+            }
+          },
+          {
+            "id": "28e33d8ab08c663b408150c2e3faf7b175d03638c1ff8f306e44f8e893261636",
+            "split": "dev",
+            "program": "SCENE RECT BLUE 5 7 8 11 RECT BLUE 10 1 8 4 RECT GREEN 2 6 13 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8505859375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08573963439542483
+            }
+          },
+          {
+            "id": "1c96ec31095dc642417d38aa17560e4efba67e09e2bed41e8868c67d1df67845",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 18 19 6 9 RECT RED 12 12 9 13 RECT GREEN 19 4 6 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8046875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11667687908496732
+            }
+          },
+          {
+            "id": "76bb9dc511e6ff51c403c65833dd595f6d47564ce3617e2a0ab5480517d9d73a",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 3 2 11 8 RECT RED 4 20 12 4 RECT GREEN 3 7 9 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.81640625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11139195261437909
+            }
+          },
+          {
+            "id": "376f0517ff7d93735ebae4c164d2806aea81ed5cb8ec19332c0157f2f2804922",
+            "split": "dev",
+            "program": "SCENE RECT RED 15 6 9 6 RECT GREEN 0 23 10 9 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.859375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08639705882352941
+            }
+          },
+          {
+            "id": "496a75865b218aeb7c2d49e8463dc9306bf6078e6696cfaaa8480f1b45f12444",
+            "split": "dev",
+            "program": "SCENE RECT GREEN 8 18 10 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.02476511437908497
+            }
+          },
+          {
+            "id": "aeb72afad2f8943c3f55f546361faa1c9a4402b26748201c50df0d47c6e031c6",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 3 10 13 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8662109375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07082950367647059
+            }
+          },
+          {
+            "id": "e61249d5a9d030812634d1047ca2a6ccdf42b90c49acfd8976a09d7df4c7659a",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 15 18 14 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.91796875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.04342830882352941
+            }
+          },
+          {
+            "id": "e3aa074decf6a534ce4d7545da174f358e990af236082ad938466aa98a32e68a",
+            "split": "test",
+            "program": "SCENE RECT RED 4 22 8 8 ELLIPSE BLUE 18 28 11 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.90234375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.05496834150326797
+            }
+          },
+          {
+            "id": "3705bafb8f296c4d1e885ee4a8531e5b93f9f71e89d0f7b00830a2ae9e0444dd",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 2 4 5 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.947265625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.027918198529411766
+            }
+          },
+          {
+            "id": "194ec3f2c531766e9ccc4c3188ffd45cb97a261138c4fc4d59bb82b563284759",
+            "split": "test",
+            "program": "SCENE ELLIPSE RED 24 15 4 11 ELLIPSE BLUE 2 5 9 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.034926470588235295
+            }
+          },
+          {
+            "id": "b4c8cbbb2a7212fe941c7a9f9d22b48362cd6cd759c1365768f04a862d952a73",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 19 2 7 7 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9638671875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.019129136029411766
+            }
+          },
+          {
+            "id": "0c7ac5e0b0ab8497a1dc053b46987a83efc40de982fb7d1cf36b50d45b2930a6",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 20 4 5 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9794921875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.010857077205882353
+            }
+          },
+          {
+            "id": "fa5abb938259b865b7292c7b26a8fef0153267e8a4af89fdd950868209806583",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 13 16 13 12 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.87890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06410845588235294
+            }
+          },
+          {
+            "id": "4777decd28d8aa8367b0511eb7de9a262a5ca921a1674d1faa15edb875b79d98",
+            "split": "test",
+            "program": "SCENE ELLIPSE GREEN 0 12 4 11 RECT RED 10 6 4 13 ELLIPSE BLUE 8 8 10 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8466796875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08530560661764706
+            }
+          },
+          {
+            "id": "8ce2280538308722b5d92d778a54cb978cc59bebf1d5dac9cbdc854c1ef6935e",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 13 26 4 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.98828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0062040441176470585
+            }
+          },
+          {
+            "id": "43e3904aa22a73bfa3fa27b4828d95a7d07a9c7fdb9904baa9b6e687fd2a4049",
+            "split": "test",
+            "program": "SCENE RECT BLUE 25 11 5 4 ELLIPSE RED 7 17 9 10 ELLIPSE BLUE 3 12 12 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.865234375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07492085375816993
+            }
+          },
+          {
+            "id": "39a3545c064d2dde998814b73de72f6b7b7bb4bf30ee9c2f047397a6793ddc6c",
+            "split": "test",
+            "program": "SCENE RECT RED 15 6 4 4 RECT RED 1 15 10 14 ELLIPSE BLUE 3 14 9 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8388671875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0906671262254902
+            }
+          }
+        ],
+        "limitations": [
+          "Ground-truth programs are supplied to the codec. This is not image-to-program prediction accuracy.",
+          "Blank backgrounds inflate raw pixel agreement; foreground IoU is reported separately.",
+          "Training and learned-model evaluation require the optional torch dependency and an actual checkpoint."
+        ]
+      }
+    },
+    {
+      "name": "search-demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"likelihood_beam_search\",\n  \"backend\": \"synthetic_probability_fixture\",\n  \"learned_model_evaluated\": false,\n  \"vocabulary\": [\n    \"A\",\n    \"B\",\n    \"EOS\"\n  ],\n  \"exhaustive_best_completed_probability\": 0.396,\n  \"searches\": [\n    {\n      \"beam_size\": 1,\n      \"status\": \"completed\",\n      \"tokens\": [\n        0,\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -1.203972804325936,\n      \"normalized_score\": -1.203972804325936,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 5,\n      \"beams\": [\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ]\n    },\n    {\n      \"beam_size\": 2,\n      \"status\": \"completed\",\n      \"tokens\": [\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -0.9263410677276565,\n      \"normalized_score\": -0.9263410677276565,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 7,\n      \"beams\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ]\n    },\n    {\n      \"beam_size\": 4,\n      \"status\": \"completed\",\n      \"tokens\": [\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -0.9263410677276565,\n      \"normalized_score\": -0.9263410677276565,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 8,\n      \"beams\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            0,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            1,\n            0,\n            2\n          ],\n          \"log_probability\": -5.521460917862246,\n          \"finished\": true,\n          \"normalized_score\": -5.521460917862246\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            0,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            1,\n            0,\n            2\n          ],\n          \"log_probability\": -5.521460917862246,\n          \"finished\": true,\n          \"normalized_score\": -5.521460917862246\n        }\n      ]\n    }\n  ],\n  \"limitations\": [\n    \"This verifies search mechanics, not image-to-program quality.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pixel_to_program",
+        "search-demo",
+        "--output",
+        "/tmp/cli-reports-zrvwfv3_/search-demo.json"
+      ],
+      "seconds": 0.189953,
+      "report": {
+        "experiment": "likelihood_beam_search",
+        "backend": "synthetic_probability_fixture",
+        "learned_model_evaluated": false,
+        "vocabulary": [
+          "A",
+          "B",
+          "EOS"
+        ],
+        "exhaustive_best_completed_probability": 0.396,
+        "searches": [
+          {
+            "beam_size": 1,
+            "status": "completed",
+            "tokens": [
+              0,
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -1.203972804325936,
+            "normalized_score": -1.203972804325936,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 5,
+            "beams": [
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ]
+          },
+          {
+            "beam_size": 2,
+            "status": "completed",
+            "tokens": [
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -0.9263410677276565,
+            "normalized_score": -0.9263410677276565,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 7,
+            "beams": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ]
+          },
+          {
+            "beam_size": 4,
+            "status": "completed",
+            "tokens": [
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -0.9263410677276565,
+            "normalized_score": -0.9263410677276565,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 8,
+            "beams": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  0,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  1,
+                  0,
+                  2
+                ],
+                "log_probability": -5.521460917862246,
+                "finished": true,
+                "normalized_score": -5.521460917862246
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  0,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  1,
+                  0,
+                  2
+                ],
+                "log_probability": -5.521460917862246,
+                "finished": true,
+                "normalized_score": -5.521460917862246
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "This verifies search mechanics, not image-to-program quality."
+        ]
+      }
+    },
+    {
+      "name": "wheel_build",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing /workspace/applied-ai-repositories/pixel-to-program\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: pixel-to-program-lab\n  Building wheel for pixel-to-program-lab (pyproject.toml): started\n  Building wheel for pixel-to-program-lab (pyproject.toml): finished with status 'done'\n  Created wheel for pixel-to-program-lab: filename=pixel_to_program_lab-0.1.0-py3-none-any.whl size=31961 sha256=ab6f6f2e452e23fe6ee5cbf6231a533411653d9e5d39d2912f33d2a04f31a88a\n  Stored in directory: /home/agent/.cache/pip/wheels/7b/e1/c1/cdabc2f811d5a456b836dbc36e5d30f05e87d704cc574217f6\nSuccessfully built pixel-to-program-lab\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/tmp/cold-wheel-_4s19ci2/wheels",
+        "."
+      ],
+      "seconds": 2.05725
+    },
+    {
+      "name": "wheel_install",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing ./wheels/pixel_to_program_lab-0.1.0-py3-none-any.whl\nInstalling collected packages: pixel-to-program-lab\nSuccessfully installed pixel-to-program-lab-0.1.0\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-_4s19ci2/environment/bin/python",
+        "-I",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "/tmp/cold-wheel-_4s19ci2/wheels/pixel_to_program_lab-0.1.0-py3-none-any.whl"
+      ],
+      "seconds": 0.899313
+    },
+    {
+      "name": "wheel_import_origin",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "/tmp/cold-wheel-_4s19ci2/environment/lib/python3.12/site-packages/pixel_to_program/__init__.py\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-_4s19ci2/environment/bin/python",
+        "-I",
+        "-c",
+        "import pixel_to_program as module; import sys; from pathlib import Path; assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()); print(module.__file__)"
+      ],
+      "seconds": 0.089738
+    },
+    {
+      "name": "wheel_demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"backend\": \"synthetic_ground_truth\",\n  \"learned_model_evaluated\": false,\n  \"directory\": \"artifacts/demo\",\n  \"program\": \"SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE BLUE 16 10 10 8 END\",\n  \"roundtrip\": {\n    \"exact_raster_match\": true,\n    \"pixel_agreement\": 1.0,\n    \"foreground_iou\": 1.0,\n    \"rgb_mae\": 0.0\n  }\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-_4s19ci2/environment/bin/python",
+        "-I",
+        "-m",
+        "pixel_to_program",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-rmqfvkt8/demo.json"
+      ],
+      "seconds": 0.150284,
+      "report": {
+        "backend": "synthetic_ground_truth",
+        "learned_model_evaluated": false,
+        "directory": "artifacts/demo",
+        "program": "SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE BLUE 16 10 10 8 END",
+        "roundtrip": {
+          "exact_raster_match": true,
+          "pixel_agreement": 1.0,
+          "foreground_iou": 1.0,
+          "rgb_mae": 0.0
+        }
+      }
+    },
+    {
+      "name": "wheel_evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"schema_version\": 1,\n  \"experiment\": \"synthetic_codec_and_renderer_validation\",\n  \"backend\": \"ground_truth_program_roundtrip\",\n  \"learned_model_evaluated\": false,\n  \"seed\": 17,\n  \"denominator\": 36,\n  \"cases_per_split\": 12,\n  \"oracle_exact_raster_matches\": 36,\n  \"cases\": [\n    {\n      \"id\": \"25440d45aa90038ada13a13af320eb29bc924d0b9ace1291eb18658a5dd2c024\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE GREEN 10 20 8 12 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.849609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.09452869689542483\n      }\n    },\n    {\n      \"id\": \"dac7c04c21fc7929e82de7bc55f7681f649cb445a67c20b9e09c25061032d29b\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 10 7 14 11 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.849609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08748212826797386\n      }\n    },\n    {\n      \"id\": \"f18dfc5bcbe6c77151745026c3b5415c6a719946cf0746613e676b33fc2763cc\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 16 6 12 5 ELLIPSE GREEN 9 18 9 12 RECT BLUE 3 8 13 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.7578125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.13985906862745098\n      }\n    },\n    {\n      \"id\": \"b4e23d3bf63e1c582ae0e1040b4635e4dab79335300f6b925be5cf19c3d8be76\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 20 3 8 14 ELLIPSE RED 0 13 13 6 ELLIPSE GREEN 4 10 5 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8173828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.10158164828431372\n      }\n    },\n    {\n      \"id\": \"386242bf3b056db8785cf250e9e66a52e8d438533b27169473ed593e8f00be25\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 9 15 10 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06934232026143791\n      }\n    },\n    {\n      \"id\": \"a8a5c713d5fbf5189ba4de12aca693d2f7e09fce57ecdf88144b99883cc1aa77\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 14 5 4 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.94921875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.02688419117647059\n      }\n    },\n    {\n      \"id\": \"2a1eee28b1f56433b8b7d989a840c3bd75d04c6affbe2bd9c3e4badb3e8e041a\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 9 13 4 13 ELLIPSE GREEN 4 23 12 9 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.87890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07472937091503268\n      }\n    },\n    {\n      \"id\": \"45f65458799198c59d46d7a208039d8403469b749ef7859156425b506dec1e34\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 6 5 13 6 RECT BLUE 21 2 6 14 RECT BLUE 14 14 8 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.09732434640522876\n      }\n    },\n    {\n      \"id\": \"9a06ca2c2e4a46eccb3bf463c731435e67853456c676dc7921ec172b61c71fba\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT RED 20 15 7 8 RECT RED 9 18 8 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9140625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.04998978758169935\n      }\n    },\n    {\n      \"id\": \"a43f717c063801af07686cec93dd134c34a7aba7d4837f409fa6fa9b78936493\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 13 19 14 7 RECT RED 1 21 6 11 RECT BLUE 7 13 14 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.734375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.14399509803921567\n      }\n    },\n    {\n      \"id\": \"e8e28599cd825e5e38310fbe291b6a7cb79a2315375e5155046a4f4fb9283374\",\n      \"split\": \"train\",\n      \"program\": \"SCENE ELLIPSE GREEN 6 2 8 8 RECT RED 10 8 8 12 ELLIPSE RED 7 7 10 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8525390625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08771829044117647\n      }\n    },\n    {\n      \"id\": \"30e8f1fd280ffc1a3d196b1f984c2841256c4495f6657e676dab41c2094585b1\",\n      \"split\": \"train\",\n      \"program\": \"SCENE RECT BLUE 5 7 12 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.84765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08065257352941177\n      }\n    },\n    {\n      \"id\": \"58f9b99a6c0a1842e6e61c4092f7e6b182b72b001ec7d78a2edd066f075cf5b1\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 7 10 13 10 ELLIPSE RED 17 12 4 13 RECT GREEN 21 5 7 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8310546875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.10041998570261439\n      }\n    },\n    {\n      \"id\": \"18e3eb8595771be6182fa5f4a24ab3b712c21a5293a288c1c45a6536293ece86\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 7 9 11 7 RECT GREEN 16 18 10 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8134765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11513863357843138\n      }\n    },\n    {\n      \"id\": \"fd8635eabd785af51cb468d50a2048b818a074b052c936e3e929e7478917bddf\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT GREEN 6 17 9 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.912109375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.05572150735294118\n      }\n    },\n    {\n      \"id\": \"e9534bf90288d5808f4b74d47486fc4fd2f0d8f31a2b36df495c4b865d6e3fd0\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 18 3 8 9 RECT GREEN 5 21 4 11 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8984375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06132557189542484\n      }\n    },\n    {\n      \"id\": \"705d0998964417a54816966a2e1126f1f4607f7d7b7a3ed128930b87012ef1e3\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 21 11 11 10 RECT RED 0 0 4 12 RECT GREEN 1 1 4 6 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.86328125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0807546977124183\n      }\n    },\n    {\n      \"id\": \"9f8b85ae2708b84642bab2b29be5aa2b4bbcb0c9598eed15cd785f82c8dd23df\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE GREEN 19 18 13 14 ELLIPSE RED 13 15 6 10 RECT GREEN 14 10 7 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.759765625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.15169270833333334\n      }\n    },\n    {\n      \"id\": \"30d7b56c13ed310a9c7e65bd9c2e51754fc91afa87bf210ba40fc005bde64e11\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT BLUE 7 0 6 13 RECT GREEN 14 12 12 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.771484375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.13691023284313725\n      }\n    },\n    {\n      \"id\": \"28e33d8ab08c663b408150c2e3faf7b175d03638c1ff8f306e44f8e893261636\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT BLUE 5 7 8 11 RECT BLUE 10 1 8 4 RECT GREEN 2 6 13 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8505859375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08573963439542483\n      }\n    },\n    {\n      \"id\": \"1c96ec31095dc642417d38aa17560e4efba67e09e2bed41e8868c67d1df67845\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 18 19 6 9 RECT RED 12 12 9 13 RECT GREEN 19 4 6 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8046875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11667687908496732\n      }\n    },\n    {\n      \"id\": \"76bb9dc511e6ff51c403c65833dd595f6d47564ce3617e2a0ab5480517d9d73a\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE ELLIPSE RED 3 2 11 8 RECT RED 4 20 12 4 RECT GREEN 3 7 9 10 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.81640625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.11139195261437909\n      }\n    },\n    {\n      \"id\": \"376f0517ff7d93735ebae4c164d2806aea81ed5cb8ec19332c0157f2f2804922\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT RED 15 6 9 6 RECT GREEN 0 23 10 9 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.859375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08639705882352941\n      }\n    },\n    {\n      \"id\": \"496a75865b218aeb7c2d49e8463dc9306bf6078e6696cfaaa8480f1b45f12444\",\n      \"split\": \"dev\",\n      \"program\": \"SCENE RECT GREEN 8 18 10 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9609375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.02476511437908497\n      }\n    },\n    {\n      \"id\": \"aeb72afad2f8943c3f55f546361faa1c9a4402b26748201c50df0d47c6e031c6\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 3 10 13 13 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8662109375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07082950367647059\n      }\n    },\n    {\n      \"id\": \"e61249d5a9d030812634d1047ca2a6ccdf42b90c49acfd8976a09d7df4c7659a\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 15 18 14 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.91796875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.04342830882352941\n      }\n    },\n    {\n      \"id\": \"e3aa074decf6a534ce4d7545da174f358e990af236082ad938466aa98a32e68a\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT RED 4 22 8 8 ELLIPSE BLUE 18 28 11 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.90234375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.05496834150326797\n      }\n    },\n    {\n      \"id\": \"3705bafb8f296c4d1e885ee4a8531e5b93f9f71e89d0f7b00830a2ae9e0444dd\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 2 4 5 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.947265625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.027918198529411766\n      }\n    },\n    {\n      \"id\": \"194ec3f2c531766e9ccc4c3188ffd45cb97a261138c4fc4d59bb82b563284759\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE RED 24 15 4 11 ELLIPSE BLUE 2 5 9 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.034926470588235295\n      }\n    },\n    {\n      \"id\": \"b4c8cbbb2a7212fe941c7a9f9d22b48362cd6cd759c1365768f04a862d952a73\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 19 2 7 7 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9638671875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.019129136029411766\n      }\n    },\n    {\n      \"id\": \"0c7ac5e0b0ab8497a1dc053b46987a83efc40de982fb7d1cf36b50d45b2930a6\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 20 4 5 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.9794921875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.010857077205882353\n      }\n    },\n    {\n      \"id\": \"fa5abb938259b865b7292c7b26a8fef0153267e8a4af89fdd950868209806583\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 13 16 13 12 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.87890625,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.06410845588235294\n      }\n    },\n    {\n      \"id\": \"4777decd28d8aa8367b0511eb7de9a262a5ca921a1674d1faa15edb875b79d98\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE GREEN 0 12 4 11 RECT RED 10 6 4 13 ELLIPSE BLUE 8 8 10 14 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8466796875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.08530560661764706\n      }\n    },\n    {\n      \"id\": \"8ce2280538308722b5d92d778a54cb978cc59bebf1d5dac9cbdc854c1ef6935e\",\n      \"split\": \"test\",\n      \"program\": \"SCENE ELLIPSE BLUE 13 26 4 4 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.98828125,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0062040441176470585\n      }\n    },\n    {\n      \"id\": \"43e3904aa22a73bfa3fa27b4828d95a7d07a9c7fdb9904baa9b6e687fd2a4049\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT BLUE 25 11 5 4 ELLIPSE RED 7 17 9 10 ELLIPSE BLUE 3 12 12 5 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.865234375,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.07492085375816993\n      }\n    },\n    {\n      \"id\": \"39a3545c064d2dde998814b73de72f6b7b7bb4bf30ee9c2f047397a6793ddc6c\",\n      \"split\": \"test\",\n      \"program\": \"SCENE RECT RED 15 6 4 4 RECT RED 1 15 10 14 ELLIPSE BLUE 3 14 9 8 END\",\n      \"oracle_roundtrip\": {\n        \"exact_raster_match\": true,\n        \"pixel_agreement\": 1.0,\n        \"foreground_iou\": 1.0,\n        \"rgb_mae\": 0.0\n      },\n      \"blank_image_baseline\": {\n        \"exact_raster_match\": false,\n        \"pixel_agreement\": 0.8388671875,\n        \"foreground_iou\": 0.0,\n        \"rgb_mae\": 0.0906671262254902\n      }\n    }\n  ],\n  \"limitations\": [\n    \"Ground-truth programs are supplied to the codec. This is not image-to-program prediction accuracy.\",\n    \"Blank backgrounds inflate raw pixel agreement; foreground IoU is reported separately.\",\n    \"Training and learned-model evaluation require the optional torch dependency and an actual checkpoint.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-_4s19ci2/environment/bin/python",
+        "-I",
+        "-m",
+        "pixel_to_program",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-rmqfvkt8/evaluate.json"
+      ],
+      "seconds": 0.250453,
+      "report": {
+        "schema_version": 1,
+        "experiment": "synthetic_codec_and_renderer_validation",
+        "backend": "ground_truth_program_roundtrip",
+        "learned_model_evaluated": false,
+        "seed": 17,
+        "denominator": 36,
+        "cases_per_split": 12,
+        "oracle_exact_raster_matches": 36,
+        "cases": [
+          {
+            "id": "25440d45aa90038ada13a13af320eb29bc924d0b9ace1291eb18658a5dd2c024",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 9 5 8 9 ELLIPSE RED 7 12 5 4 ELLIPSE GREEN 10 20 8 12 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.849609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.09452869689542483
+            }
+          },
+          {
+            "id": "dac7c04c21fc7929e82de7bc55f7681f649cb445a67c20b9e09c25061032d29b",
+            "split": "train",
+            "program": "SCENE RECT RED 10 7 14 11 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.849609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08748212826797386
+            }
+          },
+          {
+            "id": "f18dfc5bcbe6c77151745026c3b5415c6a719946cf0746613e676b33fc2763cc",
+            "split": "train",
+            "program": "SCENE RECT RED 16 6 12 5 ELLIPSE GREEN 9 18 9 12 RECT BLUE 3 8 13 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.7578125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.13985906862745098
+            }
+          },
+          {
+            "id": "b4e23d3bf63e1c582ae0e1040b4635e4dab79335300f6b925be5cf19c3d8be76",
+            "split": "train",
+            "program": "SCENE RECT BLUE 20 3 8 14 ELLIPSE RED 0 13 13 6 ELLIPSE GREEN 4 10 5 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8173828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.10158164828431372
+            }
+          },
+          {
+            "id": "386242bf3b056db8785cf250e9e66a52e8d438533b27169473ed593e8f00be25",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 9 15 10 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06934232026143791
+            }
+          },
+          {
+            "id": "a8a5c713d5fbf5189ba4de12aca693d2f7e09fce57ecdf88144b99883cc1aa77",
+            "split": "train",
+            "program": "SCENE RECT BLUE 14 5 4 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.94921875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.02688419117647059
+            }
+          },
+          {
+            "id": "2a1eee28b1f56433b8b7d989a840c3bd75d04c6affbe2bd9c3e4badb3e8e041a",
+            "split": "train",
+            "program": "SCENE RECT RED 9 13 4 13 ELLIPSE GREEN 4 23 12 9 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.87890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07472937091503268
+            }
+          },
+          {
+            "id": "45f65458799198c59d46d7a208039d8403469b749ef7859156425b506dec1e34",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 6 5 13 6 RECT BLUE 21 2 6 14 RECT BLUE 14 14 8 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.09732434640522876
+            }
+          },
+          {
+            "id": "9a06ca2c2e4a46eccb3bf463c731435e67853456c676dc7921ec172b61c71fba",
+            "split": "train",
+            "program": "SCENE RECT RED 20 15 7 8 RECT RED 9 18 8 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9140625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.04998978758169935
+            }
+          },
+          {
+            "id": "a43f717c063801af07686cec93dd134c34a7aba7d4837f409fa6fa9b78936493",
+            "split": "train",
+            "program": "SCENE RECT BLUE 13 19 14 7 RECT RED 1 21 6 11 RECT BLUE 7 13 14 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.734375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.14399509803921567
+            }
+          },
+          {
+            "id": "e8e28599cd825e5e38310fbe291b6a7cb79a2315375e5155046a4f4fb9283374",
+            "split": "train",
+            "program": "SCENE ELLIPSE GREEN 6 2 8 8 RECT RED 10 8 8 12 ELLIPSE RED 7 7 10 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8525390625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08771829044117647
+            }
+          },
+          {
+            "id": "30e8f1fd280ffc1a3d196b1f984c2841256c4495f6657e676dab41c2094585b1",
+            "split": "train",
+            "program": "SCENE RECT BLUE 5 7 12 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.84765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08065257352941177
+            }
+          },
+          {
+            "id": "58f9b99a6c0a1842e6e61c4092f7e6b182b72b001ec7d78a2edd066f075cf5b1",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 7 10 13 10 ELLIPSE RED 17 12 4 13 RECT GREEN 21 5 7 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8310546875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.10041998570261439
+            }
+          },
+          {
+            "id": "18e3eb8595771be6182fa5f4a24ab3b712c21a5293a288c1c45a6536293ece86",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 7 9 11 7 RECT GREEN 16 18 10 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8134765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11513863357843138
+            }
+          },
+          {
+            "id": "fd8635eabd785af51cb468d50a2048b818a074b052c936e3e929e7478917bddf",
+            "split": "dev",
+            "program": "SCENE RECT GREEN 6 17 9 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.912109375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.05572150735294118
+            }
+          },
+          {
+            "id": "e9534bf90288d5808f4b74d47486fc4fd2f0d8f31a2b36df495c4b865d6e3fd0",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 18 3 8 9 RECT GREEN 5 21 4 11 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8984375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06132557189542484
+            }
+          },
+          {
+            "id": "705d0998964417a54816966a2e1126f1f4607f7d7b7a3ed128930b87012ef1e3",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 21 11 11 10 RECT RED 0 0 4 12 RECT GREEN 1 1 4 6 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.86328125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0807546977124183
+            }
+          },
+          {
+            "id": "9f8b85ae2708b84642bab2b29be5aa2b4bbcb0c9598eed15cd785f82c8dd23df",
+            "split": "dev",
+            "program": "SCENE ELLIPSE GREEN 19 18 13 14 ELLIPSE RED 13 15 6 10 RECT GREEN 14 10 7 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.759765625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.15169270833333334
+            }
+          },
+          {
+            "id": "30d7b56c13ed310a9c7e65bd9c2e51754fc91afa87bf210ba40fc005bde64e11",
+            "split": "dev",
+            "program": "SCENE RECT BLUE 7 0 6 13 RECT GREEN 14 12 12 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.771484375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.13691023284313725
+            }
+          },
+          {
+            "id": "28e33d8ab08c663b408150c2e3faf7b175d03638c1ff8f306e44f8e893261636",
+            "split": "dev",
+            "program": "SCENE RECT BLUE 5 7 8 11 RECT BLUE 10 1 8 4 RECT GREEN 2 6 13 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8505859375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08573963439542483
+            }
+          },
+          {
+            "id": "1c96ec31095dc642417d38aa17560e4efba67e09e2bed41e8868c67d1df67845",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 18 19 6 9 RECT RED 12 12 9 13 RECT GREEN 19 4 6 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8046875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11667687908496732
+            }
+          },
+          {
+            "id": "76bb9dc511e6ff51c403c65833dd595f6d47564ce3617e2a0ab5480517d9d73a",
+            "split": "dev",
+            "program": "SCENE ELLIPSE RED 3 2 11 8 RECT RED 4 20 12 4 RECT GREEN 3 7 9 10 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.81640625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.11139195261437909
+            }
+          },
+          {
+            "id": "376f0517ff7d93735ebae4c164d2806aea81ed5cb8ec19332c0157f2f2804922",
+            "split": "dev",
+            "program": "SCENE RECT RED 15 6 9 6 RECT GREEN 0 23 10 9 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.859375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08639705882352941
+            }
+          },
+          {
+            "id": "496a75865b218aeb7c2d49e8463dc9306bf6078e6696cfaaa8480f1b45f12444",
+            "split": "dev",
+            "program": "SCENE RECT GREEN 8 18 10 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9609375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.02476511437908497
+            }
+          },
+          {
+            "id": "aeb72afad2f8943c3f55f546361faa1c9a4402b26748201c50df0d47c6e031c6",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 3 10 13 13 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8662109375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07082950367647059
+            }
+          },
+          {
+            "id": "e61249d5a9d030812634d1047ca2a6ccdf42b90c49acfd8976a09d7df4c7659a",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 15 18 14 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.91796875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.04342830882352941
+            }
+          },
+          {
+            "id": "e3aa074decf6a534ce4d7545da174f358e990af236082ad938466aa98a32e68a",
+            "split": "test",
+            "program": "SCENE RECT RED 4 22 8 8 ELLIPSE BLUE 18 28 11 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.90234375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.05496834150326797
+            }
+          },
+          {
+            "id": "3705bafb8f296c4d1e885ee4a8531e5b93f9f71e89d0f7b00830a2ae9e0444dd",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 2 4 5 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.947265625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.027918198529411766
+            }
+          },
+          {
+            "id": "194ec3f2c531766e9ccc4c3188ffd45cb97a261138c4fc4d59bb82b563284759",
+            "split": "test",
+            "program": "SCENE ELLIPSE RED 24 15 4 11 ELLIPSE BLUE 2 5 9 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.034926470588235295
+            }
+          },
+          {
+            "id": "b4c8cbbb2a7212fe941c7a9f9d22b48362cd6cd759c1365768f04a862d952a73",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 19 2 7 7 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9638671875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.019129136029411766
+            }
+          },
+          {
+            "id": "0c7ac5e0b0ab8497a1dc053b46987a83efc40de982fb7d1cf36b50d45b2930a6",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 20 4 5 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.9794921875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.010857077205882353
+            }
+          },
+          {
+            "id": "fa5abb938259b865b7292c7b26a8fef0153267e8a4af89fdd950868209806583",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 13 16 13 12 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.87890625,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.06410845588235294
+            }
+          },
+          {
+            "id": "4777decd28d8aa8367b0511eb7de9a262a5ca921a1674d1faa15edb875b79d98",
+            "split": "test",
+            "program": "SCENE ELLIPSE GREEN 0 12 4 11 RECT RED 10 6 4 13 ELLIPSE BLUE 8 8 10 14 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8466796875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.08530560661764706
+            }
+          },
+          {
+            "id": "8ce2280538308722b5d92d778a54cb978cc59bebf1d5dac9cbdc854c1ef6935e",
+            "split": "test",
+            "program": "SCENE ELLIPSE BLUE 13 26 4 4 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.98828125,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0062040441176470585
+            }
+          },
+          {
+            "id": "43e3904aa22a73bfa3fa27b4828d95a7d07a9c7fdb9904baa9b6e687fd2a4049",
+            "split": "test",
+            "program": "SCENE RECT BLUE 25 11 5 4 ELLIPSE RED 7 17 9 10 ELLIPSE BLUE 3 12 12 5 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.865234375,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.07492085375816993
+            }
+          },
+          {
+            "id": "39a3545c064d2dde998814b73de72f6b7b7bb4bf30ee9c2f047397a6793ddc6c",
+            "split": "test",
+            "program": "SCENE RECT RED 15 6 4 4 RECT RED 1 15 10 14 ELLIPSE BLUE 3 14 9 8 END",
+            "oracle_roundtrip": {
+              "exact_raster_match": true,
+              "pixel_agreement": 1.0,
+              "foreground_iou": 1.0,
+              "rgb_mae": 0.0
+            },
+            "blank_image_baseline": {
+              "exact_raster_match": false,
+              "pixel_agreement": 0.8388671875,
+              "foreground_iou": 0.0,
+              "rgb_mae": 0.0906671262254902
+            }
+          }
+        ],
+        "limitations": [
+          "Ground-truth programs are supplied to the codec. This is not image-to-program prediction accuracy.",
+          "Blank backgrounds inflate raw pixel agreement; foreground IoU is reported separately.",
+          "Training and learned-model evaluation require the optional torch dependency and an actual checkpoint."
+        ]
+      }
+    },
+    {
+      "name": "wheel_search-demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"likelihood_beam_search\",\n  \"backend\": \"synthetic_probability_fixture\",\n  \"learned_model_evaluated\": false,\n  \"vocabulary\": [\n    \"A\",\n    \"B\",\n    \"EOS\"\n  ],\n  \"exhaustive_best_completed_probability\": 0.396,\n  \"searches\": [\n    {\n      \"beam_size\": 1,\n      \"status\": \"completed\",\n      \"tokens\": [\n        0,\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -1.203972804325936,\n      \"normalized_score\": -1.203972804325936,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 5,\n      \"beams\": [\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ]\n    },\n    {\n      \"beam_size\": 2,\n      \"status\": \"completed\",\n      \"tokens\": [\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -0.9263410677276565,\n      \"normalized_score\": -0.9263410677276565,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 7,\n      \"beams\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        }\n      ]\n    },\n    {\n      \"beam_size\": 4,\n      \"status\": \"completed\",\n      \"tokens\": [\n        1,\n        2\n      ],\n      \"eos_emitted\": true,\n      \"log_probability\": -0.9263410677276565,\n      \"normalized_score\": -0.9263410677276565,\n      \"length_penalty\": 0.0,\n      \"backend_calls\": 3,\n      \"candidate_expansions\": 8,\n      \"beams\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            0,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            1,\n            0,\n            2\n          ],\n          \"log_probability\": -5.521460917862246,\n          \"finished\": true,\n          \"normalized_score\": -5.521460917862246\n        }\n      ],\n      \"completed_hypotheses\": [\n        {\n          \"tokens\": [\n            1,\n            2\n          ],\n          \"log_probability\": -0.9263410677276565,\n          \"finished\": true,\n          \"normalized_score\": -0.9263410677276565\n        },\n        {\n          \"tokens\": [\n            0,\n            1,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            0,\n            2\n          ],\n          \"log_probability\": -1.203972804325936,\n          \"finished\": true,\n          \"normalized_score\": -1.203972804325936\n        },\n        {\n          \"tokens\": [\n            1,\n            0,\n            2\n          ],\n          \"log_probability\": -5.521460917862246,\n          \"finished\": true,\n          \"normalized_score\": -5.521460917862246\n        }\n      ]\n    }\n  ],\n  \"limitations\": [\n    \"This verifies search mechanics, not image-to-program quality.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-_4s19ci2/environment/bin/python",
+        "-I",
+        "-m",
+        "pixel_to_program",
+        "search-demo",
+        "--output",
+        "/tmp/cli-reports-rmqfvkt8/search-demo.json"
+      ],
+      "seconds": 0.198743,
+      "report": {
+        "experiment": "likelihood_beam_search",
+        "backend": "synthetic_probability_fixture",
+        "learned_model_evaluated": false,
+        "vocabulary": [
+          "A",
+          "B",
+          "EOS"
+        ],
+        "exhaustive_best_completed_probability": 0.396,
+        "searches": [
+          {
+            "beam_size": 1,
+            "status": "completed",
+            "tokens": [
+              0,
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -1.203972804325936,
+            "normalized_score": -1.203972804325936,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 5,
+            "beams": [
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ]
+          },
+          {
+            "beam_size": 2,
+            "status": "completed",
+            "tokens": [
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -0.9263410677276565,
+            "normalized_score": -0.9263410677276565,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 7,
+            "beams": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              }
+            ]
+          },
+          {
+            "beam_size": 4,
+            "status": "completed",
+            "tokens": [
+              1,
+              2
+            ],
+            "eos_emitted": true,
+            "log_probability": -0.9263410677276565,
+            "normalized_score": -0.9263410677276565,
+            "length_penalty": 0.0,
+            "backend_calls": 3,
+            "candidate_expansions": 8,
+            "beams": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  0,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  1,
+                  0,
+                  2
+                ],
+                "log_probability": -5.521460917862246,
+                "finished": true,
+                "normalized_score": -5.521460917862246
+              }
+            ],
+            "completed_hypotheses": [
+              {
+                "tokens": [
+                  1,
+                  2
+                ],
+                "log_probability": -0.9263410677276565,
+                "finished": true,
+                "normalized_score": -0.9263410677276565
+              },
+              {
+                "tokens": [
+                  0,
+                  1,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  0,
+                  2
+                ],
+                "log_probability": -1.203972804325936,
+                "finished": true,
+                "normalized_score": -1.203972804325936
+              },
+              {
+                "tokens": [
+                  1,
+                  0,
+                  2
+                ],
+                "log_probability": -5.521460917862246,
+                "finished": true,
+                "normalized_score": -5.521460917862246
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "This verifies search mechanics, not image-to-program quality."
+        ]
+      }
+    }
+  ]
+}
